@@ -1,0 +1,6 @@
+<div class="starter-template">
+    <a href="#" ng-click="createList()">Create new List</a>
+    <ul ng-repeat="list in lists">
+        <li><a ng-href="#/todo-lists/{{list.id}}" ng-bind="list.id"></a></li>
+    </ul>
+</div>
