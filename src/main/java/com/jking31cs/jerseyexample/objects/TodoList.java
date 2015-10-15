@@ -1,15 +1,15 @@
 package com.jking31cs.jerseyexample.objects;
 
+import java.util.List;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Optional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 /**
- * Created by jking31cs on 10/13/15.
+ * This object holds the data for a TodoList.  A TodoList contains a list of items and an optional id.  The id is
+ * optional so that we can allow the client to only pass us a list of items to serialize this object correctly.
  */
 public class TodoList {
     private final Optional<Integer> id;

@@ -1,12 +1,13 @@
 package com.jking31cs.jerseyexample.objects;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Objects;
-
 /**
- * Created by jking31cs on 10/13/15.
+ * This represents an item in a TodoList.  An item contains a message and a boolean that declares if it has been done
+ * or not.
  */
 public class Item {
     private final boolean done;

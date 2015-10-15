@@ -6,7 +6,8 @@ import com.google.inject.servlet.GuiceServletContextListener;
 import com.google.inject.servlet.ServletModule;
 
 /**
- * Created by jking31cs on 10/13/15.
+ * This handles creating a Guice Injector that includes all of our binding options and providers in any modules we wish
+ * to consider.  In this case, we're adding the servlet module and the example module that binds our store objects.
  */
 public class JerseyGuiceServletConfig extends GuiceServletContextListener {
 

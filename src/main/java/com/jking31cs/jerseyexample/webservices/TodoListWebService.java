@@ -1,15 +1,23 @@
 package com.jking31cs.jerseyexample.webservices;
 
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 import com.jking31cs.jerseyexample.objects.TodoList;
 import com.jking31cs.jerseyexample.stores.TodoListStore;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.util.List;
-
 /**
- * Created by jking31cs on 10/13/15.
+ * This web service handles all the different http calls from a client to create, read, update, and delete TodoLists.
+ * This is done using Jersey/JAX-RS (Java Application Rest Service API).
  */
 @Path("api/todo-lists")
 public class TodoListWebService {

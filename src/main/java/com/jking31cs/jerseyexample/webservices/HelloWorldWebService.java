@@ -5,7 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 /**
- * Created by jking31cs on 10/13/15.
+ * This is a test webservice to make sure that I had everything set up correctly.
  */
 @Path("api/hello-world")
 @Produces("text/plain")

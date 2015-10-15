@@ -1,15 +1,17 @@
 package com.jking31cs.jerseyexample.stores;
 
-import com.google.common.base.Optional;
-import com.jking31cs.jerseyexample.objects.TodoList;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+import com.google.common.base.Optional;
+import com.jking31cs.jerseyexample.objects.TodoList;
+
 /**
- * Created by jking31cs on 10/13/15.
+ * Nomrally, we'd have a DB Backend service here that handles the different transactions and select calls properly, but
+ * I'm lazy and didn't want to implement that.
  */
 @Singleton
 public class TodoListStore {

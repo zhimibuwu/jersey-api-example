@@ -3,10 +3,9 @@ package com.jking31cs.jerseyexample;
 import com.google.inject.AbstractModule;
 import com.jking31cs.jerseyexample.stores.TodoListStore;
 
-import java.util.AbstractCollection;
-
 /**
- * Created by jking31cs on 10/13/15.
+ * This Guice Module handles binding our TodoListStore, meaning that when we inject the TodoListStore into another
+ * service (like our WebService), it knows where and how to create/get that object.
  */
 public class JerseyExampleGuiceModule extends AbstractModule {
     @Override
