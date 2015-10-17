@@ -1,6 +1,9 @@
 <div class="starter-template">
+    <h4>All Lists</h4>
     <a href="#" ng-click="createList()">Create new List</a>
-    <ul ng-repeat="list in lists">
-        <li><a ng-href="#/todo-lists/{{list.id}}" ng-bind="list.id"></a></li>
-    </ul>
+    <div class="list-group" ng-repeat="list in lists" style="width: 20% !important;">
+        <a class="list-group-item" ng-href="#/todo-lists/{{list.id}}">
+            <p ng-bind="'List Number ' + list.id"></p>
+        </a>
+    </div>
 </div>
