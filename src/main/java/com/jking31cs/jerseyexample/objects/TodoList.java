@@ -6,31 +6,44 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Optional;
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
 
 /**
  * This object holds the data for a TodoList.  A TodoList contains a list of items and an optional id.  The id is
  * optional so that we can allow the client to only pass us a list of items to serialize this object correctly.
  */
+@Entity
 public class TodoList {
-    private final Optional<Integer> id;
-    private final List<Item> items;
+
+    @Id
+    private Long id;
+
+    private List<Item> items;
 
     @JsonCreator
     public TodoList(
-            @JsonProperty("id") Optional<Integer> id,
-            @JsonProperty("items") List<Item> items
+        @JsonProperty("id") Long id,
+        @JsonProperty("items") List<Item> items
     ) {
         this.id = id;
         this.items = items;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public List<Item> getItems() {
         return items;
     }
 
-    public Optional<Integer> getId() {
-        return id;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override

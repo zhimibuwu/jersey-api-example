@@ -8,7 +8,7 @@
     ]);
 
     app.factory('TodoList', ['$resource', function ($resource) {
-        return $resource('/jersey-api-example/api/todo-lists/:id', {id: '@id'}, {
+        return $resource('/api/todo-lists/:id', {id: '@id'}, {
             'update': { method : 'PUT'}
         });
     }]);

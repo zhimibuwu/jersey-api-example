@@ -38,7 +38,7 @@ public class TodoListWebService {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public TodoList getList(@PathParam("id") Integer id) {
+    public TodoList getList(@PathParam("id") Long id) {
         return store.get(id);
     }
 
@@ -53,7 +53,7 @@ public class TodoListWebService {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public TodoList updateList(@PathParam("id") Integer id, TodoList todoList) {
+    public TodoList updateList(@PathParam("id") Long id, TodoList todoList) {
         return store.save(todoList);
     }
 

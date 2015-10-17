@@ -22,7 +22,7 @@ public class JerseyGuiceServletConfig extends GuiceServletContextListener {
 
         if (injector == null) {
             injector = Guice.createInjector(
-                new ServletModule(),
+                new JerseyExampleServletModule(),
                 new JerseyExampleGuiceModule()
             );
         }

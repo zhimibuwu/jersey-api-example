@@ -33,7 +33,6 @@
     <filter-name>JerseyContextFilter</filter-name>
     <url-pattern>/api/*</url-pattern>
   </filter-mapping>
-
   <!--
     Handles which file to load up first when someone navigates to this web application.  This is where our example
     front end code starts.

@@ -1,13 +1,27 @@
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.26'
+    }
+}
 
 // Plugins to apply: Java (for compiling), Jetty (to test locally), War (to create WAR file)
 apply plugin: 'java'
-apply plugin: 'jetty'
 apply plugin: 'war'
+apply plugin: 'appengine'
 
-war {
-    baseName = 'jersey-api-example'
-    archiveName 'jersey-api-example.war'
+appengine {
+    downloadSdk = true
+    appcfg {
+        email = 'jking31cs@gmail.com'
+    }
+    update {
+        useJava7 = true
+    }
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -19,6 +33,9 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
+    //Needed for google app engine to work
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.26'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.26'
 
     //Dependencies for everything we need for Jersey/Jackson/Guice here
     compile 'com.google.guava:guava:18.0'
@@ -34,6 +51,7 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-core:2.6'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.6'
     compile 'com.fasterxml.jackson.datatype:jackson-datatype-guava:2.2.3'
+    compile 'com.googlecode.objectify:objectify:5.1.8'
 
     // Test compiles here.
     testCompile 'junit:junit:4.12'
