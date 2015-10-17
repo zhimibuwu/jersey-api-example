@@ -46,7 +46,7 @@ In this case, this is where we set up the Jersey Application and the Guice filte
 For more information on the different settings you can set for jersey, see this appendix: https://jersey.java.net/documentation/latest/appendix-properties.html
 For more information on the Guice Filter, see this: https://github.com/google/guice/wiki/Servlets
 
-### JerseyApplication class
+#### JerseyApplication class
 This class is where we do some additional setup and link together Guice, Jersey, and Jackson.
 We register the JacksonJaxbJsonProvider and ObjectMappResolver, which allows us to use the proper annotations provided by Jackson on our objects and to auto-convert request bodies into Java Beans and vice versa.
 We also set up the Guice Bridge, which allows us to use dependency injection in our Web Services with classes registered with Guice.
