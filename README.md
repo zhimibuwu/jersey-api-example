@@ -66,15 +66,15 @@ The WebService class has a Path annotiation, which denotes the url to call to hi
 Jersey will auto add all classes that include the Path annotation that's in the package list in the web.xml file.
 For each public method in this service class, there are a list of different annotations.
 Annotations like GET, POST, PUT, and DELETE are defining the specific Http Method used with the url.
-Extra Path annotations add onto the path given, allowing for sub paths (like adding an id, or getting a subresource)
-The Produces annotation specifically tells the request the content type of the response body.  
+Extra Path annotations add onto the path given, allowing for sub paths (like adding an id, or getting a subresource).
+The Produces annotation specifically tells the request the content type of the response body.
 The Consumes annotation specifically tells the app what type of request body to expect.
 This will lead to errors if the content-type headers on the http request are not set to the correct type.
 
 #### Objects
 There are two specific objects in this package that are just domain objects with getters, equals, and hashcode methods.
-The key thing here is the JsonCreator and JsonProperty annotations.  
-They tell jackson how to create the JavaBean given a JSON object.  
+The key thing here is the JsonCreator and JsonProperty annotations.
+They tell jackson how to create the JavaBean given a JSON object.
 If the JSON object matches this object constructor and the web service method is expecting it, it'll build it fine.
 If no JSON object matches the object expected in the web service method, you'll get a 400 bad request error.
 You could also get a 415 Media Type error, which means you didn't set the content-type header in the request.
